@@ -1,0 +1,103 @@
+users:
+  yencheac:
+    username: yencheac
+    articleIds:
+      - 1
+    commentIds:
+      - 1
+  Tony:
+    username: Tony
+    articleIds:
+      - 3
+    commentIds:
+      - 3
+      - 4
+  Andy:
+    username: Andy
+    articleIds: []
+    commentIds:
+      - 5
+      - 6
+  hello:
+    username: hello
+    articleIds: []
+    commentIds: []
+articles:
+  '1':
+    id: 1
+    title: Google
+    url: 'http://www.google.com'
+    username: yencheac
+    commentIds:
+      - 1
+      - 2
+      - 5
+    upvotedBy:
+      - yencheac
+      - Tony
+      - Andy
+    downvotedBy: []
+    comments:
+      - &ref_0
+        id: 1
+        body: This is Google
+        username: yencheac
+        articleId: 1
+        upvotedBy:
+          - yencheac
+        downvotedBy: []
+      - &ref_1
+        id: 2
+        body: Yes this is Google!
+        username: Tony
+        articleId: 1
+        upvotedBy: []
+        downvotedBy:
+          - Andy
+  '2': null
+  '3':
+    id: 3
+    title: Facebook
+    url: 'http://www.facebook.com'
+    username: Tony
+    commentIds:
+      - 4
+      - 6
+    upvotedBy:
+      - Tony
+    downvotedBy: []
+    comments:
+      - &ref_2
+        id: 4
+        body: This is Facebook!
+        username: Tony
+        articleId: 3
+        upvotedBy: []
+        downvotedBy: []
+      - &ref_3
+        id: 6
+        body: >
+          Why is Facebook like Jail? 
+
+          "You have a profile picture, you sit around all day writing on walls,
+          and you get poked by guys you don't really know!" 
+        username: Andy
+        articleId: 3
+        upvotedBy:
+          - Andy
+        downvotedBy: []
+nextArticleId: 4
+comments:
+  '1': *ref_0
+  '2': *ref_1
+  '3': null
+  '4': *ref_2
+  '5':
+    id: 5
+    body: I prefer Bing!
+    username: Andy
+    articleId: 1
+    upvotedBy: []
+    downvotedBy: []
+  '6': *ref_3
+nextCommentId: 7
